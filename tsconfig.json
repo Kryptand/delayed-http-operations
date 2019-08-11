@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "delayed-http-operations": [
+        "dist/delayed-http-operations"
+      ],
+      "delayed-http-operations/*": [
+        "dist/delayed-http-operations/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

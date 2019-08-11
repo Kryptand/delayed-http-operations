@@ -1,0 +1,19 @@
+<kryptand-add-edit-posts [post]="selectedPost" (createEventTriggered)="savePost($event)" (updateEventTriggered)="updatePost($event)"></kryptand-add-edit-posts>
+<ng-container *ngFor="let item of posts$|async;">
+  title: {{item.title}}
+  author: {{item.author}}
+  id: {{item.id}}
+  <button [disabled]="item.deleted" (click)="deletePost(item.id)">
+    Delete
+  </button>
+  <button  [disabled]="!item.deleted" (click)="revertDelete(item.id)">
+    Revert
+  </button>
+  <button (click)="setCurrentItem(item)">
+    Edit
+  </button>
+</ng-container>
+
+<button (click)="executeChanges($event)">
+  Execute all changes
+</button>

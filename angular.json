@@ -120,6 +120,41 @@
           }
         }
       }
+    },
+    "delayed-http-operations": {
+      "projectType": "library",
+      "root": "projects/delayed-http-operations",
+      "sourceRoot": "projects/delayed-http-operations/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/delayed-http-operations/tsconfig.lib.json",
+            "project": "projects/delayed-http-operations/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/delayed-http-operations/src/test.ts",
+            "tsConfig": "projects/delayed-http-operations/tsconfig.spec.json",
+            "karmaConfig": "projects/delayed-http-operations/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/delayed-http-operations/tsconfig.lib.json",
+              "projects/delayed-http-operations/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "delayed-save"
 }
