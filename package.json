@@ -1,6 +1,14 @@
 {
-  "name": "delayed-save",
-  "version": "0.0.0",
+  "name": "@kryptand/delayed-save",
+  "version": "1.0.0"
+  , "license": "MIT",
+  "author": {
+    "name": "Kryptand"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Kryptand/delayed-http-operations.git"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

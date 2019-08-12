@@ -4,5 +4,13 @@
   "peerDependencies": {
     "@angular/common": "^8.2.0",
     "@angular/core": "^8.2.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Kryptand"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Kryptand/delayed-http-operations.git"
   }
 }
