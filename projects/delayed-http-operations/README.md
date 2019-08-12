@@ -1,7 +1,8 @@
+<pre>
 _  ______   ____________  ____ 
 |_/ |__/ \_/ |__]| |__||\ ||  \
 | \_|  \  |  |   | |  || \||__/
-_______________________________
+</pre>
 What problem does Delayed Http Operations solve?
 This package can be used to delay all your HTTP Requests up to a certain point without the hassle of locally providing multiple states.
 
