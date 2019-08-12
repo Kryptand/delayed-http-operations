@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Post } from "../../models/post";
 import { PostsService } from "./../../services/post.service";
 import { Observable } from "rxjs";
@@ -10,11 +10,13 @@ import { Observable } from "rxjs";
   providers:[PostsService]
 })
 export class PostsContainerComponent implements OnInit {
+  @Input() featureKey:string;
   posts$: Observable<Post[]>;
   constructor(private postService: PostsService) {}
   selectedPost:Post;
 
   ngOnInit() {
+    this.postService.FEATURE_KEY.next(this.featureKey);
     this.postService.loadPosts();
     this.posts$ = this.postService.posts$;
   }
@@ -34,6 +36,6 @@ export class PostsContainerComponent implements OnInit {
     this.selectedPost=item;
   }
   executeChanges(){
-    this.postService.execute();
+    this.postService.execute().subscribe();
   }
 }

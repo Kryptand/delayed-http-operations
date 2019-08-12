@@ -25,7 +25,7 @@ export class AddEditPostsComponent implements OnInit {
   @Output() updateEventTriggered: EventEmitter<Post> = new EventEmitter();
   @Output() createEventTriggered: EventEmitter<Post> = new EventEmitter();
   postForm = new FormGroup({
-    id: new FormControl(generateUUID()),
+    id: new FormControl(),
     title: new FormControl(""),
     author: new FormControl("")
   });
@@ -34,7 +34,8 @@ export class AddEditPostsComponent implements OnInit {
     if (this.post && this.post.id) {
       this.updateEventTriggered.emit(this.postForm.value);
     }
-    this.createEventTriggered.emit(this.postForm.value);
+    const postmodel={...this.postForm.value,id:generateUUID()}
+    this.createEventTriggered.emit(postmodel);
   }
   ngOnInit() {
     if (this.post) {
