@@ -1,24 +1,25 @@
-# DelayedHttpOperations
+_  ______   ____________  ____ 
+|_/ |__/ \_/ |__]| |__||\ ||  \
+| \_|  \  |  |   | |  || \||__/
+_______________________________
+What problem does Delayed Http Operations solve?
+This package can be used to delay all your HTTP Requests up to a certain point without the hassle of locally providing multiple states.
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
+To use it add the DelayedHttpOperationsService to the providers array in the scope of your liking. 
+(It is recommended to add it to AppModule though)
 
-## Code scaffolding
+<pre>
+[...]
+import { DelayedHttpOperationsService } from 'projects/delayed-http-operations/src/lib/services/delayed-http-operations.service';
 
-Run `ng generate component component-name --project delayed-http-operations` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project delayed-http-operations`.
-> Note: Don't forget to add `--project delayed-http-operations` or else it will be added to the default project in your `angular.json` file. 
+@NgModule({
+ [...]
+  providers: [DelayedHttpOperationsService],
+  [...]
+})
+export class AppModule {}
+</pre>
 
-## Build
+For an example look into https://github.com/Kryptand/delayed-http-operations
 
-Run `ng build delayed-http-operations` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Publishing
-
-After building your library with `ng build delayed-http-operations`, go to the dist folder `cd dist/delayed-http-operations` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test delayed-http-operations` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -1,12 +1,12 @@
 <form [formGroup]="postForm">
-  <input type="hidden" formControlName="id">
+  <input type="hidden" formControlName="id" />
   <label>
-   Titel:
-    <input type="text" formControlName="title">
+    Titel:
+    <input type="text" formControlName="title" />
   </label>
   <label>
-  Autor:
-    <input type="text" formControlName="author">
+    Autor:
+    <input type="text" formControlName="author" />
   </label>
   <button type="submit" (click)="saveEvent($event)">Absenden</button>
 </form>

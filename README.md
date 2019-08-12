@@ -1,27 +1,25 @@
-# DelayedSave
+_  ______   ____________  ____ 
+|_/ |__/ \_/ |__]| |__||\ ||  \
+| \_|  \  |  |   | |  || \||__/
+_______________________________
+What problem does Delayed Http Operations solve?
+This package can be used to delay all your HTTP Requests up to a certain point without the hassle of locally providing multiple states.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
+To use it add the DelayedHttpOperationsService to the providers array in the scope of your liking. 
+(It is recommended to add it to AppModule though)
 
-## Development server
+<pre>
+[...]
+import { DelayedHttpOperationsService } from 'projects/delayed-http-operations/src/lib/services/delayed-http-operations.service';
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+@NgModule({
+ [...]
+  providers: [DelayedHttpOperationsService],
+  [...]
+})
+export class AppModule {}
+</pre>
 
-## Code scaffolding
+For an example look into https://github.com/Kryptand/delayed-http-operations
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

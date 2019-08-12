@@ -1,12 +1,12 @@
-import { DelayedHttpOperation } from "../models/delayed-http-operation";
-export const featureExists = (featureName: string, delayedOperations: {
-  [featureName: string]: DelayedHttpOperation[];
-}): boolean => {
-  if (featureName == null) {
-    throw new Error("Feature name is not defined");
+import { DelayedHttpOperation } from '../models/delayed-http-operation'
+import { throwIfNullOrUndefined } from './throwIfNullOrUndefined'
+export const featureExists = (
+  featureName: string,
+  delayedOperations: {
+    [featureName: string]: DelayedHttpOperation[]
   }
-  if (delayedOperations == null) {
-    throw new Error("Delayedoperations Object is not defined");
-  }
-  return delayedOperations[featureName].length > 0 ? true : false;
-};
+): boolean => {
+  throwIfNullOrUndefined(featureName, 'feature')
+  throwIfNullOrUndefined(delayedOperations, 'delayedOperations')
+  return delayedOperations[featureName].length > 0 ? true : false
+}
